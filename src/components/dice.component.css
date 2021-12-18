@@ -1,0 +1,42 @@
+.number1 {
+    background: url("../dice-game-starter-pack-master/dice-1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .number2 {
+    background: url("../dice-game-starter-pack-master/dice-2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .number3 {
+    background: url("../dice-game-starter-pack-master/dice-3.png");;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .number4 {
+    background: url("../dice-game-starter-pack-master/dice-4.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .number5 {
+    background: url("../dice-game-starter-pack-master/dice-5.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .number6 {
+    background: url("../dice-game-starter-pack-master/dice-6.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #diceNum1,
+  #diceNum2 {
+    width: 200px;
+    height: 200px;
+    border: 3px solid red;
+  }

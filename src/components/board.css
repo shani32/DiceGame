@@ -1,0 +1,70 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	width: 100vw;
+	height: 100vh;
+    background-color: #d12c2c;
+}
+.gameContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+    height: 65vh;
+}
+.playerContainer{
+	display: flex;
+    width: 400px;
+    text-align: center;
+    
+}
+.player1 {
+width: 100%;
+height: 50vh;
+border: 3px solid #d12c2c;
+background-color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+line-height: 2;
+
+}
+.player2 {
+	width: 100%;
+	height: 50vh;
+	border: 3px solid #d12c2c;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 2;
+    
+
+
+
+}
+.winner{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: goldenrod;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.winner p{
+	font-size: 5vw;
+	margin-bottom: 2rem;
+}
+button{
+    background-color: red;
+    color: white;
+    width: 80px;
+    margin-top: 20px;
+}
