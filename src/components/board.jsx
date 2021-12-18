@@ -7,32 +7,32 @@ class Board extends React.Component {
   state = {
     playerScore1: 0,
     playerScore2: 0,
-    playerTemporaryScore1: 0,
-    playerTemporaryScore2: 0,
+    temporaryScore1: 0,
+    temporaryScore2: 0,
     playerTurn: 1,
     playerWinner: 0,
     display: "none",
     test: 1,
     inputValue: 0,
-    chickenChickenWinnerDinner: 100,
+    pointsToWin: 100,
   };
 
   ScoreChange = (sum) => {
     if (this.state.playerTurn === 1) {
       if (sum === 0) {
-        this.setState({ playerTemporaryScore1: 0 }, this.HoldScore);
+        this.setState({ temporaryScore1: 0 }, this.HoldScore);
       } else {
         this.setState({
-          playerTemporaryScore1: this.state.playerTemporaryScore1 + sum,
+          temporaryScore1: this.state.temporaryScore1 + sum,
         });
       }
     }
     if (this.state.playerTurn === 2) {
       if (sum === 0) {
-        this.setState({ playerTemporaryScore2: 0 }, this.HoldScore);
+        this.setState({ temporaryScore2: 0 }, this.HoldScore);
       } else {
         this.setState({
-          playerTemporaryScore2: this.state.playerTemporaryScore2 + sum,
+         temporaryScore2: this.state.temporaryScore2 + sum,
         });
       }
     }
@@ -42,9 +42,9 @@ class Board extends React.Component {
       this.setState(
         {
           playerScore1:
-            this.state.playerScore1 + this.state.playerTemporaryScore1,
+            this.state.playerScore1 + this.state.temporaryScore1,
           playerTurn: 2,
-          playerTemporaryScore1: 0,
+          temporaryScore1: 0,
         },
         this.Winner
       );
@@ -53,20 +53,20 @@ class Board extends React.Component {
       this.setState(
         {
           playerScore2:
-            this.state.playerScore2 + this.state.playerTemporaryScore2,
+            this.state.playerScore2 + this.state.temporaryScore2,
           playerTurn: 1,
-          playerTemporaryScore2: 0,
+          temporaryScore2: 0,
         },
         this.Winner
       );
     }
   };
 
-  onChaneValue = (event) => {
-    this.setState({ chickenChickenWinnerDinner: event.target.value });
+  onChangeValue = (event) => {
+    this.setState({ pointsToWin: event.target.value });
   };
   Winner = () => {
-    if (this.state.playerScore1 >= this.state.chickenChickenWinnerDinner) {
+    if (this.state.playerScore1 >= this.state.pointsToWin) {
       this.setState((prevState) => {
         return {
           display: "flex",
@@ -74,7 +74,7 @@ class Board extends React.Component {
         };
       });
     }
-    if (this.state.playerScore2 >= this.state.chickenChickenWinnerDinner) {
+    if (this.state.playerScore2 >= this.state.pointsToWin) {
       this.setState((prevState) => {
         return {
           display: "flex",
@@ -88,8 +88,8 @@ class Board extends React.Component {
     this.setState({
       playerScore1: 0,
       playerScore2: 0,
-      playerTemporaryScore1: 0,
-      playerTemporaryScore2: 0,
+      temporaryScore1: 0,
+      temporaryScore2: 0,
       playerTurn: 1,
       display: "none",
       playerWinner: 0,
@@ -100,8 +100,8 @@ class Board extends React.Component {
     const {
       playerScore1,
       playerScore2,
-      playerTemporaryScore1,
-      playerTemporaryScore2,
+      temporaryScore1,
+      temporaryScore2,
     } = this.state;
     return (
       <div className="gameContainer">
@@ -109,7 +109,7 @@ class Board extends React.Component {
           <div className="player1">
             <Player
               playerNumber={1}
-              playerTemporaryScore={playerTemporaryScore1}
+              temporaryScore={temporaryScore1}
               playerScore={playerScore1}
             />
           </div>
@@ -119,7 +119,7 @@ class Board extends React.Component {
         <input
           type="text"
           vlaue={this.state.inputValue}
-          onChange={(event) => this.onChaneValue(event)}
+          onChange={(event) => this.onChangeValue(event)}
         />{" "}
         <br />
 
@@ -135,7 +135,7 @@ class Board extends React.Component {
             <div className="player2">
                 <Player
                 playerNumber={2}
-                playerTemporaryScore={playerTemporaryScore2}
+                temporaryScore={temporaryScore2}
                 playerScore={playerScore2}
             />
           </div>
